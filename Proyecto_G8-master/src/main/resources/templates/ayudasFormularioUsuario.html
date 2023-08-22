@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantillaAyudasMaterialesUsuario :: head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="background-color: #212226">
+                    <header th:replace="layout/plantillaAyudasMaterialesUsuario :: header">
+
+                    </header>
+                    <div style="justify-content: left; padding-left: 4%; padding-top: 2%; display: flex;" >
+                        <button type="button" style="background-color: #15CDCB;" class="btn btn-primary btn-lg" onclick="location.href = '/menuAyudasUsuario'" >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                          </svg>
+                        </button>
+                     </div>
+                    <script type="text/javascript">
+                        
+                        function myFunction(ayuda) {
+                          window.location.href = "/formularioAyuda/modificar/"+ayuda.value;
+                            //alert("test " + ayuda.id_modalidad);
+                        }
+                    </script>
+
+                    <div style="justify-content: center; display: flex" >
+
+                        <div style="justify-content: center; display: flex; padding-top: 7%;" class="btn-group-vertical">
+                                <form th:action="@{/formularioAyuda/guardar}" th:object="${ayudas}" method="POST" class="was-validated"
+                              enctype="multipart/form-data">
+                                    <label for="formGroupExampleInput" style="color: white">Ayuda</label>
+                                    <div class="mb-3">
+                                    <select id="selcectAyudas" name="id_ayuda" 
+                                            class="form-select" 
+                                            aria-label="Default select example" onchange="myFunction(this)">
+                                        <option selected>Seleccione una ayuda</option>
+                                        <option th:each="ayuda : ${ayudas}" th:value="${ayuda.idAyuda}" th:text="${ayuda.idAyuda}" >
+                                        </option>
+                                    </select>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput" style="color: white">Forma de entrega</label>
+                                        <input disabled type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput" style="color: white">Dirección</label>
+                                        <input disabled type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>   
+                                    <div class="form-group">
+                                        <label style="color: white">Fecha de entrega</label>
+                                        <br>
+                                        <input disabled type="text" class="form-control" id="formGroupExampleInput" aria-describedby="emailHelp">
+                                    </div>
+   
+                                    <br>
+                                        
+                                        <div class="form-group">
+                                        <label style="color: white">Descripción</label>
+                                        <br>
+                                            <textarea disabled name="descripcion" rows="4" cols="50" class="form-control" id="formGroupExampleInput" aria-describedby="emailHelp"></textarea>
+                                    </div>
+                                    <br>  
+                                        <button type="submit" style="background-color: #15CDCB;" class="btn btn-primary btn-lg">Enviar</button>
+                                <br>
+                                </form>
+                                
+                                    </div>
+                                    </div>
+
+                                    </body>
+                                    </html>

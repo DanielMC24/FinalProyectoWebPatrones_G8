@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantillaPerfilUsuario :: head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="background-color: #212226">
+                    <header th:replace="layout/plantillaPerfilUsuario :: header">
+
+                    </header>
+                    
+                    
+
+                    <div style="justify-content: center; display: flex" >
+
+                        <div style="justify-content: center; display: flex; padding-top: 7%;" class="btn-group-vertical">
+                            <br>
+                            <br>
+                                <img src="https://cdn-icons-png.flaticon.com/512/3607/3607444.png"  height="300px" width="300px" class="rounded-circle" alt="Cinque Terre">>
+                            <br>    
+                            <br> 
+                                <form style="justify-content: center;" th:object="${usuario}" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput" style="color: white">Correo electrónico</label>
+                                        <input disabled th:field="*{correo_electronico}" type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput" style="color: white">Nombre</label>
+                                        <input disabled th:field="*{nombre}" type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput" style="color: white">Cédula</label>
+                                        <input disabled th:field="*{cedula}" type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>   
+                                    <div class="form-group">
+                                        <label style="color: white">Ubicación</label>
+                                        <input disabled th:field="*{ubicacion}" type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>   
+                                    <div class="form-group">
+                                        <label style="color: white">Sector</label>
+                                        <input disabled th:field="*{sector}" type="text" class="form-control" id="formGroupExampleInput">
+                                    </div>
+                                    <br>
+                                    <br> 
+                                    <br> 
+                                    <br> 
+                                    <br> 
+                                    <br> 
+                                    <br> 
+                                    <br>
+                                    <br> 
+                                    <br> 
+                                    <br> 
+                                    <br> 
+                                    <br>
+                                    <br> 
+                                    <br>  
+                                    <br> 
+                                    <br> 
+                                    <br>
+                                </form>
+                                    </div>
+                                    </div>
+                        <footer th:replace="layout/plantillaPerfilUsuarioInstitucion :: footer" style="margin-top: auto">
+
+                        </footer>
+
+</body>
+</html>
